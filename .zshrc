@@ -40,7 +40,7 @@
  
  alias sshfastx="ssh -Y achakr33@fastx-cluster.cs.brown.edu"
  alias sshbrown="ssh -Y achakr33@ssh.cs.brown.edu"
- alias sshccv="ssh achakr33@sshcampus.ccv.brown.edu"
+ alias sshccv="ssh -A achakr33@sshcampus.ccv.brown.edu"
  
  wifi-password() {
      if [[ -n "$1" ]]; then
