@@ -18,8 +18,7 @@ return require('packer').startup(function(use)
   use 'nvim-tree/nvim-tree.lua'
   use 'nvim-tree/nvim-web-devicons'
   use 'nvim-lualine/lualine.nvim'
-  use
-  {
+  use {
     "akinsho/toggleterm.nvim", tag = '*', config = function()
       require("toggleterm").setup()
     end
@@ -60,7 +59,7 @@ return require('packer').startup(function(use)
     tag = '0.1.4',
     requires = { {'nvim-lua/plenary.nvim'} }
   }
-  
+
   use {
     'goolord/alpha-nvim',
     requires = { 'kyazdani42/nvim-web-devicons' },
@@ -87,6 +86,16 @@ return require('packer').startup(function(use)
         require("telescope").load_extension("lazygit")
       end
   })
+
+
+  use {
+    'akinsho/bufferline.nvim',
+    tag = "*",
+    requires = 'nvim-tree/nvim-web-devicons',
+    config = function()
+      require("plugin_config.bufferline")
+    end
+  }
 
   if packer_bootstrap then
     require('packer').sync()
