@@ -3,7 +3,6 @@ vim.opt.tabstop = 4
 vim.opt.autoindent = true
 vim.o.relativenumber = true
 vim.opt.spelllang = 'en_us'
-vim.opt.spell = true
 
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
@@ -26,10 +25,13 @@ vim.opt.relativenumber = true
 
 vim.opt.scrolloff = 5
 
+vim.opt.termguicolors = true
+
 vim.cmd([[autocmd InsertEnter * set norelativenumber]])
 vim.cmd([[autocmd InsertLeave * set relativenumber]])
 
 vim.keymap.set('n', '<leader>h', ':nohlsearch<CR>')
+vim.keymap.set('v', '<leader>p', '"_dP')
 
 require("plugins")
 require("plugin_config")
