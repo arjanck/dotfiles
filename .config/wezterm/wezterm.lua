@@ -79,8 +79,10 @@ config.font = wezterm.font('MesloLGS NF')
 config.harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' }
 config.default_cursor_style = "SteadyBar"
 config.window_padding = {
-    left = "0.0cell",
-    bottom = '0.0cell',
+    left = 1,
+    right = 1,
+    top = 1,
+    bottom = 1,
 }
 config.warn_about_missing_glyphs=false
 
