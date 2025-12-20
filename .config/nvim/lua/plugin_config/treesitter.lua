@@ -1,4 +1,4 @@
-require'nvim-treesitter.configs'.setup {
+require('nvim-treesitter.configs').setup {
   ensure_installed = {"c", "lua", "rust", "ruby", "vim", "python", "bash"},
 
   autotag = { enable = true },
