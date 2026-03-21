@@ -39,7 +39,7 @@
  alias rm="rm -v"
  
  alias sshfastx="ssh -Y achakr33@fastx-cluster.cs.brown.edu"
- alias sshbrown="ssh -Y achakr33@ssh.cs.brown.edu"
+ alias sshbrown="ssh -A achakr33@ssh.cs.brown.edu"
  alias sshccv="ssh -A achakr33@sshcampus.ccv.brown.edu"
  
  wifi-password() {

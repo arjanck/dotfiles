@@ -54,10 +54,14 @@ return require('packer').startup(function(use)
     "williamboman/mason-lspconfig.nvim",
     "neovim/nvim-lspconfig",
   }
+
   use {
     'nvim-telescope/telescope.nvim',
     tag = '0.1.4',
-    requires = { {'nvim-lua/plenary.nvim'} }
+    requires = {
+      'nvim-lua/plenary.nvim',
+      'nvim-telescope/telescope-file-browser.nvim',
+    }
   }
 
   use {
@@ -88,14 +92,14 @@ return require('packer').startup(function(use)
   })
 
 
-  use {
-    'akinsho/bufferline.nvim',
-    tag = "*",
-    requires = 'nvim-tree/nvim-web-devicons',
-    config = function()
-      require("plugin_config.bufferline")
-    end
-  }
+--  use {
+--    'akinsho/bufferline.nvim',
+--    tag = "*",
+--    requires = 'nvim-tree/nvim-web-devicons',
+--    config = function()
+--      require("plugin_config.bufferline")
+--    end
+--  }
 
   if packer_bootstrap then
     require('packer').sync()

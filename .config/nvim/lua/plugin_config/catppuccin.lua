@@ -26,13 +26,14 @@ local custom_highlights = function(colors)
     }
 end
 
-require("catppuccin").setup({
-    flavour = "macchiato",
-    integrations = {
-        bufferline = true,
-    },
-    custom_highlights = custom_highlights,
-})
+--require("catppuccin").setup({
+--    flavour = "macchiato",
+--    integrations = {
+--        bufferline = false,
+--    },
+--    custom_highlights = custom_highlights,
+--})
 
+require("catppuccin").setup()
 vim.cmd([[colorscheme catppuccin]])
 
