@@ -1,6 +1,3 @@
-require("plugin_config.alpha-nvim")
-require("plugin_config.catppuccin")
---require("plugin_config.bufferline")
 require("plugin_config.lualine")
 require("plugin_config.nvim-tree")
 require("plugin_config.treesitter")

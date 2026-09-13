@@ -14,10 +14,15 @@ local packer_bootstrap = ensure_packer()
 return require('packer').startup(function(use)
 
   use 'wbthomason/packer.nvim'
-  use { 'catppuccin/nvim', as = "catppuccin" }
   use 'nvim-tree/nvim-tree.lua'
   use 'nvim-tree/nvim-web-devicons'
-  use 'nvim-lualine/lualine.nvim'
+  use {
+    'nvim-lualine/lualine.nvim',
+    dependencies = { 'nvim-tree/nvim-web-devicons' },
+    config = function()
+      require("plugin_config.lualine")
+    end
+  }
   use {
     "akinsho/toggleterm.nvim", tag = '*', config = function()
       require("toggleterm").setup()
@@ -65,14 +70,6 @@ return require('packer').startup(function(use)
   }
 
   use {
-    'goolord/alpha-nvim',
-    requires = { 'kyazdani42/nvim-web-devicons' },
-    config = function()
-      require('plugin_config.alpha-nvim')
-    end
-  }
-
-  use {
     'lewis6991/gitsigns.nvim',
     requires = { 'nvim-lua/plenary.nvim' },
     config = function()
@@ -91,15 +88,13 @@ return require('packer').startup(function(use)
       end
   })
 
-
---  use {
---    'akinsho/bufferline.nvim',
---    tag = "*",
---    requires = 'nvim-tree/nvim-web-devicons',
---    config = function()
---      require("plugin_config.bufferline")
---    end
---  }
+  use({
+    "folke/tokyonight.nvim",
+    config = function()
+      require("tokyonight").setup()
+      vim.cmd("colorscheme tokyonight")
+    end,
+  })
 
   if packer_bootstrap then
     require('packer').sync()
